@@ -45,33 +45,14 @@ const LoginPage = () => {
       
       
       <form className='box box-login' onSubmit={handleSubmit(onSubmit)}>
-        <div className='field field-button'>
-        {/* <div className='field'>
-          <Button
-            className='button is-fullwidth button-seeker'
-            type='submit'>
-              Соискатель
-          </Button>
-        </div>
-        <div className='field'>
-          <Button
-            className='button is-fullwidth button-employer'
-            type='submit'>
-              Работодатель
-          </Button>
-        </div> */}
-
-        </div>
-      
         <div className='field field-login'>
         <div class="control">
-          <input class="input" type="email" placeholder="E-mail"></input>
+          <input class="input" type="text" id="username" placeholder="Логин/E-mail" {...register("username")}/>
         </div>
-            
         </div>
         <div className='field field-login'>
         <div class="control">
-          <input class="input" type="password" placeholder="********"></input>
+        <input class="input" type="password" id="password" placeholder="************"{...register("password")}/>
         </div>
         </div>
         
@@ -81,6 +62,7 @@ const LoginPage = () => {
             type='submit'>
               Войти
           </Button>
+          
         </div>
       </form>
       <form className='box box-registration' onSubmit={handleSubmit(onSubmit)}>

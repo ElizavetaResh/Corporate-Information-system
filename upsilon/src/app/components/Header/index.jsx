@@ -12,14 +12,10 @@ import { Link } from 'react-router-dom';
 import { toggleMenu } from '../../store/mainMenuSlice';
 
 const Header = () => {
-  const { open } = useSelector(({ menu }) => menu);
-  const dispatch = useDispatch();
 
   return (
     <Navbar className='header'>
-      <div className='icon header-bars' onClick={() => {
-        dispatch(toggleMenu(!open));
-      }}>
+      <div className='icon header-bars' >
         <FontAwesomeIcon 
           icon={ faBars } 
           size='lg' />

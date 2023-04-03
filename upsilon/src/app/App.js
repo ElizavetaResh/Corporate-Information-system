@@ -12,7 +12,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <div className={cn('upsilon-app', {'upsilon-app-isAuth': isAuth})}>
-          {isAuth && <Header />} 
+          <Header />
           <div className="upsilon-app__container">
           <Router />
           </div>
