@@ -1,0 +1,109 @@
+
+
+.upsilon-app {
+  flex-wrap: wrap;
+}
+
+.upsilon-app__container {
+  height: 150vh;
+}
+
+.section-auth {
+  width: 100%;
+}
+
+.app-name {
+  text-align: center;
+  margin-top: 29px;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  color: #000;
+}
+
+
+.counts {
+  font-family: 'Ubuntu', sans-serif !important;
+  font-weight: bold !important;
+  background-color: #89878d !important;
+  color: rgb(252, 249, 249) !important;
+  font-size: 20px !important;
+  position: right !important;
+  text-align: center;
+  width: 200px !important;
+  height: 35px !important;
+  border-radius: 10px !important;
+  left: 300px;
+}
+
+.field-button{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* Box */
+
+.box-login {
+  background-color: white !important;
+  width: 580px !important;
+  height: 360px !important;
+  margin: 0 auto !important;
+  margin-top: 66px !important;
+  margin-bottom: 10px !important;
+  padding: 50px 47px !important;
+  border-radius: 20px !important;
+}
+
+.img
+{
+  position: relative;
+  border-radius: 10px;
+  left: 350px;
+}
+
+
+.field-login {
+  margin-bottom: 35px !important;
+  height: 50px !important;
+  border-radius: 20px !important;
+}
+.output
+{
+  height: 50px !important;
+  background-color:  #d8d8da !important;
+  font-size: 20px !important;
+  border-radius: 5px !important;
+}
+
+.con
+{
+  height: 50px ;
+  background-color:  #d8d8da ;
+  font-size: 20px ;
+  border-radius: 5px ;
+  
+}
+
+
+.con1
+{
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  color: #000;
+}
+
+.con2
+{
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  color: #444343;
+}
+
+.con3
+{
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  color: #444343;
+}
