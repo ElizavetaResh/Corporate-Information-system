@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bulma-components';
+import {
+  Button 
+} from 'react-bulma-components';
 import { useNavigate } from 'react-router-dom';
+import { setUser } from '../../app/store/userSlice';
 import { useDispatch } from 'react-redux';
-import './LoginPage.scss';
+import { APP_NAME } from '../../app/constants';
+import './RegisterPage.scss';
 import * as Yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {authUser} from "../../app/store/authSlice/authSlice";
 
 const schema = Yup.object().shape({
   username: Yup
@@ -19,64 +22,56 @@ const schema = Yup.object().shape({
 });
 
 const LoginPage = () => {
-  console.log("a");
-  const [username, setUsername] = useState('');
+  const [login, setLoging] = useState('');
   const [password, setPassword] = useState('');
   const history = useNavigate();
   const dispatch = useDispatch();
 
-  /*const { register, handleLogin, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     mode: "onSubmit",
     resolver: yupResolver(schema)
-  })*/
+  })
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const username = e.target.username.value;
-    const password = e.target.password.value;
-
-    dispatch(authUser({ username, password }));
-    history('/');
+  const onSubmit = (data) => {
+    dispatch(setUser({ userName: data.username, isAuth: true }));
+    history('/notifications');
   }
-
-  /*const handleLogin = (e) => {
-    e.preventDefault();
-    const username = e.target.username.value;
-    const password = e.target.password.value;
-
-    useDispatch(authUser({ username, password }));*/
-
-  
 
   
 
   return (
-    
     <section className='hero has-background-grey-lighter is-fullheight section-auth'>
       
       
-      <form className='box box-login' onSubmit={handleLogin}>
+      <form className='box box-login' onSubmit={handleSubmit(onSubmit)}>
+        <div className='field field-button'>
+        <div className='field'>
+          <Button
+            className='button is-fullwidth button-seeker'
+            type='submit'>
+              Соискатель
+          </Button>
+        </div>
+        <div className='field'>
+          <Button
+            className='button is-fullwidth button-employer'
+            type='submit'>
+              Работодатель
+          </Button>
+        </div>
+
+        </div>
+      
         <div className='field field-login'>
         <div class="control">
-          <input 
-          class="input" 
-          type="text" 
-          id="username" 
-          placeholder="Логин/E-mail" 
-          value = {username} 
-          onChange={(e) => setUsername(e.target.value)}{...("username")}/>
+          <input class="input" type="email" placeholder="e.g. alex@example.com"></input>
         </div>
         </div>
         <div className='field field-login'>
         <div class="control">
-        <input 
-          class="input" 
-          type="password" 
-          id="password" 
-          placeholder="************" 
-          value = {password} 
-          onChange={(e) => setPassword(e.target.value)}{...("password")}/>
+          <input class="input" type="password" placeholder="********"></input>
         </div>
+          
         </div>
         
         <div className='field'>
@@ -85,10 +80,9 @@ const LoginPage = () => {
             type='submit'>
               Войти
           </Button>
-          
         </div>
       </form>
-      <form className='box box-registration' /*onSubmit={handleLogin(onSubmit)}*/>
+      <form className='box box-registration' onSubmit={handleSubmit(onSubmit)}>
         
         <div className='field'>
           <Button

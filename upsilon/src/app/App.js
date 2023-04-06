@@ -7,12 +7,10 @@ import './App.scss';
 import cn from "classnames";
 
 const App = () => {
-  const { isAuth } = useSelector(({ user }) => user);
   return (
     <>
       <BrowserRouter>
-        <div className={cn('upsilon-app', {'upsilon-app-isAuth': isAuth})}>
-          <Header />
+        <div >
           <div className="upsilon-app__container">
           <Router />
           </div>

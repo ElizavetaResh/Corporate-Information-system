@@ -1,35 +1,35 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const apiUrl = 'http://localhost:8080/api';
 
 export const authUser = createAsyncThunk(
-  'auth/authUser',
+  'user/authUser',
   async ({ username, password }) => {
-    const response = await axios.get(`/api/auth?username=${username}&password=${password}`);
-    return response.data;
+    const response = await axios.get(`http://localhost:8080/api/auth?username=${username}&password=${password}`);
+    /*return response.data;*/
+    return console.log(response.data);
   }
 );
-
+const usersAdapter = createEntityAdapter();
 const authSlice = createSlice({
   name: 'auth',
-  initialState: {
-    user: null,
-    status: 'idle',
-    error: null,
-  },
+  initialState: usersAdapter.getInitialState(
+    { loadingStatus: 'idle', error: null }),
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(authUser.pending, (state) => {
-        state.status = 'loading';
+        state.loadingStatus = 'loading';
+        state.error = null;
       })
       .addCase(authUser.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.user = action.payload;
+        usersAdapter.addOne(state, action);
+        state.loadingStatus = 'idle';
+        state.error = null;
       })
       .addCase(authUser.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
+        state.loadingStatus = 'failed';
+        state.error = action.error;
       });
   },
 });
