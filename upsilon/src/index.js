@@ -16,4 +16,4 @@ const app = express()
 app.get('/', (req, res)=>{
   res.send('HELLO POSTGRES + NODEJS')
 })
-app.listen(PORT, () => console.log('server starte on post ${PORT}'))
+app.listen(PORT, () => console.log('server started on post ${PORT}'))

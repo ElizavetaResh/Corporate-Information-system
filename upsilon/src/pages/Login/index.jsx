@@ -3,7 +3,7 @@ import {
   Button 
 } from 'react-bulma-components';
 import { useNavigate } from 'react-router-dom';
-import { setUser } from '../../app/store/userSlice';
+import { setUser } from '../../app/store/authSlice/authSlice';
 import { useDispatch } from 'react-redux';
 import { APP_NAME } from '../../app/constants';
 import './LoginPage.scss';
@@ -23,7 +23,7 @@ const schema = Yup.object().shape({
 });
 
 const LoginPage = () => {
-  const [login, setLoging] = useState('');
+  /*const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const history = useNavigate();
   const dispatch = useDispatch();
@@ -31,11 +31,18 @@ const LoginPage = () => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     mode: "onSubmit",
     resolver: yupResolver(schema)
-  })
+  })*/
+  const isLoading = useSelector;
+  (state) => state.auth.isLoading;
 
-  const onSubmit = (data) => {
-    dispatch(setUser({ userName: data.username, isAuth: true }));
-    history('/notifications');
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const username = e.target.username.value;
+    const password = e.target.password.value;
+
+    dispatch(loginUser({ username, password }));
+  
+    history('/task');
   }
 
   
@@ -44,15 +51,15 @@ const LoginPage = () => {
     <section className='hero has-background-grey-lighter is-fullheight section-auth'>
       
       
-      <form className='box box-login' onSubmit={handleSubmit(onSubmit)}>
+      <form className='box box-login' onSubmit={handleLogin}>
         <div className='field field-login'>
         <div class="control">
-          <input class="input" type="text" id="username" placeholder="Логин/E-mail" {...register("username")}/>
+          <input class="input" type="text" id="username" placeholder="Логин/E-mail" value = {username} onChange={(e) => setUsername(e.target.value)}{...register("username")}/>
         </div>
         </div>
         <div className='field field-login'>
         <div class="control">
-        <input class="input" type="password" id="password" placeholder="************"{...register("password")}/>
+        <input class="input" type="password" id="password" placeholder="************" value={password} onChange={(e) => setPassword(e.target.value)}{...register("password")}/>
         </div>
         </div>
         
