@@ -3,7 +3,6 @@ import {
   Button 
 } from 'react-bulma-components';
 import { useNavigate } from 'react-router-dom';
-import { setUser } from '../../app/store/userSlice';
 import { useDispatch } from 'react-redux';
 import { APP_NAME } from '../../app/constants';
 import './RegisterPageUser.scss';
@@ -35,30 +34,14 @@ const schema = Yup.object().shape({
 });
 
 const RegisterPage = () => {
-  const [email, setLoging] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [userName, setName] = useState('');
-  const [userSurname, setSurname] = useState('');
-  const history = useNavigate();
-  const dispatch = useDispatch();
-
-  const { register, handleSubmit, formState: { errors } } = useForm({
-    mode: "onSubmit",
-    resolver: yupResolver(schema)
-  })
-
-  const onSubmit = (data) => {
-    dispatch(setUser({ userName: data.username, isAuth: true }));
-    history('/login');
-  }
+ 
 
   
 
   return (
     <section className='hero has-background-grey-lighter is-fullheight section-auth'>
       <Task/>
-      <form className='box box-login' onSubmit={handleSubmit(onSubmit)}>
+      <form className='box box-login' /*onSubmit={handleSubmit(onSubmit)}*/>
         <div className='field field-button'>
         <div className='field'>
           <Button

@@ -9,7 +9,6 @@ import {
   faArrowRightFromBracket
  } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { toggleMenu } from '../../store/mainMenuSlice';
 
 const Header = () => {
 

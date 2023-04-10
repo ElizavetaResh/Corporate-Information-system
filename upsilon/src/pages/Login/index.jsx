@@ -6,8 +6,6 @@ import './LoginPage.scss';
 import * as Yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {authUser} from "../../app/store/authSlice/authSlice";
-import { setUser } from '../../app/store/userSlice';
 
 const schema = Yup.object().shape({
   username: Yup
@@ -20,45 +18,18 @@ const schema = Yup.object().shape({
 });
 
 const LoginPage = () => {
-  console.log("Auth");
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const history = useNavigate();
-  const dispatch = useDispatch();
+  
 
   /*const { register, handleLogin, formState: { errors } } = useForm({
     mode: "onSubmit",
     resolver: yupResolver(schema)
   })*/
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const username = e.target.username.value;
-    const password = e.target.password.value;
-
-    let data = dispatch(authUser({ username, password }));
-    console.log(data);
-    //dispatch(setUser({ userName: e.username, isAuth: true}));
-    history('/registerUser');
-  }
-
-  /*const handleLogin = (e) => {
-    e.preventDefault();
-    const username = e.target.username.value;
-    const password = e.target.password.value;
-
-    useDispatch(authUser({ username, password }));*/
-
-  
-
-  
-
   return (
     
     <section className='hero has-background-grey-lighter is-fullheight section-auth'>
       
       
-      <form className='box box-login' onSubmit={handleLogin}>
+      <form className='box box-login' /*onSubmit={handleLogin}*/>
         <div className='field field-login'>
         <div class="control">
           <input 
@@ -66,8 +37,8 @@ const LoginPage = () => {
           type="text" 
           id="username" 
           placeholder="Логин/E-mail" 
-          value = {username} 
-          onChange={(e) => setUsername(e.target.value)}{...("username")}/>
+          /*value = {username} 
+          /*onChange={(e) => setUsername(e.target.value)}{...("username")}*//>
         </div>
         </div>
         <div className='field field-login'>
@@ -77,8 +48,8 @@ const LoginPage = () => {
           type="password" 
           id="password" 
           placeholder="************" 
-          value = {password} 
-          onChange={(e) => setPassword(e.target.value)}{...("password")}/>
+          /*value = {password} 
+          /*onChange={(e) => setPassword(e.target.value)}{...("password")}*//>
         </div>
         </div>
         

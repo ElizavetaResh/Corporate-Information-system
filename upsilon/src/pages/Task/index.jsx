@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import TaskCard from '../../app/components/KartochkaZadachi/';
+import TaskCard from '../../app/components/Task';
 
 function Tasks() {
   const [tasks, setTasks] = useState([]);

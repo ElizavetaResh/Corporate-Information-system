@@ -1,70 +1,58 @@
-import React, { useState } from 'react';
-import {
-  Button 
-} from 'react-bulma-components';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import './Task.scss';
-import { useForm } from "react-hook-form";
+import React from 'react';
+import './taskCard.scss'
 
+function TaskCard(props) {
+  const {  employer, name, faculty, description, workername, workersurname, price} = props.task;
 
-const Task = () => {
-  return (  
-      <form className='box box-Task'>
-      <div>
-        <div class="con4">
-          <img className="img" type="userFoto" alt="Аватарка" scr="..."></img>
-          {/* <img >{s(value).userFoto}</img> */}
-        </div>  
-      </div>
-
-      <div className='field '>
-        <div class="con1">
-          <output class="output" type="user">LMSECURITY</output>
+  return (
+    <section className='hero has-background-grey-lighter'>
+      <form className='box box-card'>
+        <div>
+          <div class="con4">
+            <img className="img" type="userFoto" alt="Аватарка" scr="..."></img>
+            {/* <img >{s(value).userFoto}</img> */}
+          </div>  
+        </div>
+        <div className='field'>
+          <div class="con1">
+            <output class="output" type="user">{employer}</output>
           {/* <pre >{s(value).user}</pre> */}
-        </div>  
-      </div>
-
-
-      <div className='field '>
-        <div class="con1">
-          <output class="output" type="title">Актуальные новости дома</output>
-          {/* <pre >{s(value).title}</pre> */}
-        </div>  
-      </div>
-
+          </div>  
+        </div>
+        <div className='field '>
+          <div class="con1">
+            <output class="output" type="title">{name}</output>
+            {/* <pre >{s(value).title}</pre> */}
+          </div>  
+        </div>
         <div className='field'>
-        <div class="con2">
-          <output class="output" type="faculty">Факультет прикладной математики и механики</output>
+          <div class="con2">
+            <output class="output" type="faculty">{faculty}</output>
           {/* <pre >{s(value).faculty}</pre> */}
-        </div>  
+          </div>  
         </div>
-
         <div className='field'>
-        <div class="con">
-          <output class="output" type="description">
-          Информирование по вопросам, касающимся эизнедеятельности дома или благоустройства...</output>
+          <div class="con">
+            <output class="output" type="description">{description}</output>
           {/* <pre >{s(value).description}</pre> */}
+          </div>
         </div>
-        </div>
-
         <div className='field'>
-        <div class="con3">
-          <output class="output" type="ed_name">Консультант Антон Тиунов</output>
+          <div class="con3">
+            <output class="output" type="ed_name">Консультант {workername} {workersurname}</output>
           {/* <pre >{s(value).ed_name}</pre> */}
-        </div>  
+          </div>  
         </div>
-        
         <div className='field'>
-          <Button
-            className='button-login'
-            type='submit'> {/* <pre >{s(value).values}</pre> */}
-               Цена
-          </Button>
+          <div class="con3">
+            <output class="output" type="price">Цена {price}</output>
+          {/* <pre >{s(value).ed_name}</pre> */}
+          </div>  
         </div>
       </form>
-
+    </section>
+    
   )
   }
 
-export default Task;
+export default TaskCard;
