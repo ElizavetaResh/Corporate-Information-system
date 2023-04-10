@@ -32,9 +32,9 @@ class UserController {
     async authUser(req, res) {
         const { username, password } = req.query;
         const users = await db.query('SELECT * FROM public.user where ((u_login = $1 and u_password = $2) or (u_email = $1 and u_password = $2))', [username, password])
-        console.log(username)
-        console.log(password)
-        console.log('auth try')
+        //console.log(username)
+        //console.log(password)
+        //console.log('auth try')
         res.json(users.rows[0])
     }
 

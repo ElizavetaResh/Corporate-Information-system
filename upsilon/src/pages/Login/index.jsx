@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {authUser} from "../../app/store/authSlice/authSlice";
+import { setUser } from '../../app/store/userSlice';
 
 const schema = Yup.object().shape({
   username: Yup
@@ -19,7 +20,7 @@ const schema = Yup.object().shape({
 });
 
 const LoginPage = () => {
-  console.log("a");
+  console.log("Auth");
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const history = useNavigate();
@@ -35,8 +36,10 @@ const LoginPage = () => {
     const username = e.target.username.value;
     const password = e.target.password.value;
 
-    dispatch(authUser({ username, password }));
-    history('/');
+    let data = dispatch(authUser({ username, password }));
+    console.log(data);
+    //dispatch(setUser({ userName: e.username, isAuth: true}));
+    history('/registerUser');
   }
 
   /*const handleLogin = (e) => {

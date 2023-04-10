@@ -43,7 +43,7 @@ const LoginPage = () => {
     <section className='hero has-background-grey-lighter is-fullheight section-auth'>
       
       
-      <form className='box box-login' onSubmit={handleSubmit(onSubmit)}>
+      <form className='box box-register' onSubmit={handleSubmit(onSubmit)}>
         <div className='field field-button'>
         <div className='field'>
           <Button
@@ -62,7 +62,7 @@ const LoginPage = () => {
 
         </div>
       
-        <div className='field field-login'>
+        <div className='field field-register'>
         <div class="control">
           <input class="input" type="email" placeholder="e.g. alex@example.com"></input>
         </div>
@@ -82,7 +82,7 @@ const LoginPage = () => {
           </Button>
         </div>
       </form>
-      <form className='box box-registration' onSubmit={handleSubmit(onSubmit)}>
+      <form className='box box-register' onSubmit={handleSubmit(onSubmit)}>
         
         <div className='field'>
           <Button
@@ -92,7 +92,7 @@ const LoginPage = () => {
           </Button>
         </div>
         <div className='field'>
-          <p className='registration-info'>После регистрации вы получите доступ к размещению резюме</p>
+          <p className='register-info'>После регистрации вы получите доступ к размещению резюме</p>
         </div>
         
       </form>

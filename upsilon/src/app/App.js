@@ -7,6 +7,7 @@ import './App.scss';
 import cn from "classnames";
 
 const App = () => {
+  const {isAuth}=useSelector(({user})=>user);
   return (
     <>
       <BrowserRouter>

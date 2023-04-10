@@ -1,16 +1,19 @@
 import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-
 export const authUser = createAsyncThunk(
   'user/authUser',
   async ({ username, password }) => {
-    const response = await axios.get(`http://localhost:8080/api/auth?username=${username}&password=${password}`);
-    /*return response.data;*/
-    return console.log(response.data);
+    const response = await axios.post(`http://localhost:8080/api/user/auth?username=${username}&password=${password}`);
+    return response.data;
   }
 );
-const usersAdapter = createEntityAdapter();
+
+const usersAdapter = createEntityAdapter({
+  selectId: (user) => user.id,
+  sortComparer: (a, b) => a.id.localeCompare(b.id),
+});
+
 const authSlice = createSlice({
   name: 'auth',
   initialState: usersAdapter.getInitialState(
@@ -23,7 +26,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(authUser.fulfilled, (state, action) => {
-        usersAdapter.addOne(state, action);
+        usersAdapter.addOne(state, action.payload);
         state.loadingStatus = 'idle';
         state.error = null;
       })
@@ -33,9 +36,8 @@ const authSlice = createSlice({
       });
   },
 });
-export const { } = authSlice.actions;
 
-export const selectUser = (state) => state.auth.user;
+export const setUser = (state) => state.auth;
 export const selectIsLoading = (state) => state.auth.isLoading;
 export const selectError = (state) => state.auth.error;
 

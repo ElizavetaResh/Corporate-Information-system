@@ -19,5 +19,4 @@ export const userSlice = createSlice({
 });
 
 export const { setUser, doRecovery } = userSlice.actions;
-
 export default userSlice.reducer;
