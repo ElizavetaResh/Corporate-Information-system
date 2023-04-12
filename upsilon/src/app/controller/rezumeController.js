@@ -12,3 +12,4 @@ class RezumeController {
 
     }
 }
+module.exports = new RezumeController()
