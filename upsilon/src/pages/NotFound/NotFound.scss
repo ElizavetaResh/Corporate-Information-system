@@ -1,0 +1,49 @@
+// Google Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Mono+One&display=swap');
+
+// Font Variables
+$rubik-head: 'Rubik Mono One', sans-serif;
+$roboto-content: 'Roboto', sans-serif;
+
+
+.mon-notfound {
+  margin: 200px 600px 0 700px;
+  width: auto;
+  height: calc(100vh - 54px);
+  display: flex;
+  flex-direction: column;
+  //background-color: #F5F5F9;
+  padding: 24px;
+
+  .box{
+    padding: 3rem;
+    margin: 0;
+    align-items: center;
+    font-family: $roboto-content;
+    font-size: 1em;
+
+    .NotF-head {
+      font-family: $rubik-head;
+      .title{
+        color: rgba(105, 104, 104, 0.6);
+      }
+      .subtitle{
+        color: rgba(105, 104, 104, 0.3);
+      }
+    }
+    .NotF-middle {
+      padding-top: 2rem;
+    }
+    .NotF-bottom {
+
+    }
+  }
+}
+ul {
+  display: block;
+  list-style-type: square;
+  padding-inline-start: 1em;
+  padding-block-start: 0.5em;
+  padding-block-end: 1em;
+}

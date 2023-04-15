@@ -1,0 +1,121 @@
+.flex1{
+    right: 25px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    bottom: 20px;
+    padding: 15px;
+    bottom: 20px;
+    color: #7C41DE;
+    margin-left: 250px;
+    text-decoration: underline;
+}
+
+.flex{
+    right: 25px;
+    cursor: pointer;
+    font-size: 24px;
+    bottom: 20px;
+    padding-right: 15px;
+    bottom: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.hea{
+    margin-left: 250px;
+    margin-top: 25px;
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.filtr{
+    position: fixed; 
+    right: 250px; 
+    top: 20px;
+    padding: 10px;
+    width: 400px;   
+    border-radius: 15px;
+    background-color: white;    
+}
+
+.filtre{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+.filter-name
+{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    color: #6E7191;
+
+}
+label{
+    display:block;
+    font-size:20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:500;
+    padding: 0 0 5px 15px;
+}
+.tasks{
+    border-radius: 3%;
+    margin: 10px; 
+}
+
+.Applys{
+    width:100%;
+    height: 35px;
+    margin-left: 10px; 
+    margin-top: 10px;
+    background: #7C41DE; 
+    color: white;
+    font-size:20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:bold;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+.Applys:hover
+{
+    color:#fff;
+}
+.Applys:active
+{
+    color:#fff;
+}
+.Applys:focus
+{
+    color:#fff;
+}
+.Clears{
+    width:100%;
+    height: 35px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #fff;  
+    border-width: 4px;
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+.Othet{
+    width:100%;
+    height: 35px;
+    margin-left: 10px; 
+    margin-top: 5px;
+    background: #fff; 
+    border-width: 4px;
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+input[type=checkbox], input[type=radio] {
+    margin-right: 10px!important;
+}

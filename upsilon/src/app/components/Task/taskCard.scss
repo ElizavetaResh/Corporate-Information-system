@@ -1,0 +1,69 @@
+.has-background-grey-lighter
+{
+}
+/* Box */
+.box-card
+{
+  margin: 0 0 35px 250px;
+  border-radius: 25px !important;
+  width:935px ;
+}
+.field
+{
+  letter-spacing: 1px;
+}
+.field-img
+{
+  justify-content:right;
+
+}
+.field-employer
+{
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #6E7191;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.field-name
+{
+  width: 850px;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  color: #14142B;
+  letter-spacing: 0px;
+}
+.field-faculty
+{
+  text-align: center;
+  width: 500px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color:  #F0F1F5 ;
+  border-radius: 5px ;
+  font-family: 'Ubuntu', sans-serif;
+  color: #9C9DB5;
+  
+}
+.field-description
+{
+  width: 850px;
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #14142B;
+}
+.field-worker
+{
+
+  position:static;
+  left: 100px;
+  top: 450px;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  color: #A0A3BD;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
